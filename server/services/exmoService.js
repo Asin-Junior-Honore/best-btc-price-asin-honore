@@ -14,13 +14,14 @@ const getExmoData = async (currency, timeout) => {
         if (!pairData) {
             return null;
         }
+        const exmoTimestamp = new Date(pairData.updated * 1000).toISOString();
 
         return {
             exchange: 'EXMO',
             Symbol: `BTC/${currency.toUpperCase()}`,
             Price: parseFloat(pairData.sell_price),
             Currency: currency.toUpperCase(),
-            timestamp: new Date().toISOString()
+            timestamp: exmoTimestamp || new Date().toISOString()
         };
     } catch (error) {
         console.error('Error fetching from EXMO:', error.message);
