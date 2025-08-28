@@ -86,6 +86,7 @@ A Node.js/Express API that normalizes Bitcoin prices from multiple cryptocurrenc
    ```bash
    curl http://localhost:3000/api/health
    curl http://localhost:3000/api/best?currency=GBP
+   curl http://localhost:3000/api/exchanges?currency=GBP
    ```
 
 ## Project Structure
