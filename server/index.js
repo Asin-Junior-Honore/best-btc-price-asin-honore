@@ -10,7 +10,9 @@ const PORT = config.server.port;
 
 
 // Middleware
-app.use(cors());
+app.use(
+    cors({ origin: "https://best-btc-price-asin-honore.onrender.com" })
+);
 app.use(express.json());
 
 // Health endpoint
